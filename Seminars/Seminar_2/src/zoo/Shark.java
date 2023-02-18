@@ -1,7 +1,7 @@
 package zoo;
 
 public class Shark extends Predator implements Waterfowl{
-    private int swimspeed = 25;
+    private int swimSpeed = 25;
     public Shark(String name) {
         super (name);
     }
@@ -13,6 +13,6 @@ public class Shark extends Predator implements Waterfowl{
 
     @Override
     public int getSpeedWaterfowl() {
-        return this.swimspeed;
+        return this.swimSpeed;
     }
 }

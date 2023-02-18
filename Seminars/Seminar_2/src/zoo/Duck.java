@@ -1,9 +1,10 @@
 package zoo;
 
-public class Duck extends Herbivores implements Flyable, Runable {
+public class Duck extends Herbivores implements Flyable, Runable, Waterfowl {
     private int flightSpeed = 15;
     private int flightHing = 5;
     private int runSpeed = 10;
+    private int swimSpeed = 3;
 
     public Duck(String name) {
         super(name);
@@ -13,7 +14,6 @@ public class Duck extends Herbivores implements Flyable, Runable {
     public String say() {
         return "Krya Krya!";
     }
-
 
     @Override
     public int getSpeedFlyable() {
@@ -28,5 +28,10 @@ public class Duck extends Herbivores implements Flyable, Runable {
     @Override
     public int getSpeedRun() {
         return this.runSpeed;
+    }
+
+    @Override
+    public int getSpeedWaterfowl() {
+        return this.swimSpeed;
     }
 }
