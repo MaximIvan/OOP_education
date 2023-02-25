@@ -9,6 +9,11 @@ public class heavyArmor implements Armor {
     }
 
     @Override
+    public int getBlockDamage() {
+        return 80;
+    }
+
+    @Override
     public String toString() {
         return "heavyArmor(helmet, chain mail, shield) blockDamage= " + blockDamage();
     }

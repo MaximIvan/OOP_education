@@ -8,13 +8,15 @@ import weapons.Sword;
 public class SwordMan extends Warrior<Sword, heavyArmor> {
 
     private Armor armor;
+    private int blockDamage;
 
     public SwordMan(String name, Sword weapon, heavyArmor armor) {
         super(name, weapon, armor);
+        blockDamage = armor.getBlockDamage();
     }
 
-    public Armor getArmor() {
-        return armor;
+    public int getBlockDamage() {
+        return blockDamage;
     }
 
     @Override

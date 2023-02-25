@@ -7,23 +7,25 @@ import armor.easyArmor;
 public class Archer extends Warrior<Bow, easyArmor> implements DistanceAttacker {
 
     private int distance;
+    private int blockDamage;
 
     public Archer(String name, Bow weapon, easyArmor armor) {
         super(name, weapon, armor);
         distance = weapon.getDistance() + rnd.nextInt(10);
+        blockDamage = armor.getBlockDamage();
     }
 
     public int getDistance() {
         return distance;
     }
 
-    public Armor getArmor() {
-        return armor;
+    public int getBlockDamage() {
+        return blockDamage;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " Type = Archer{" + "distance=" + distance + ", blockDamage= " + armor + '}';
+        return super.toString() + " Type = Archer{" + "distance=" + distance + ", blockDamage= " + blockDamage + '}';
     }
 }
 

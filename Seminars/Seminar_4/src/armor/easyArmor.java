@@ -6,6 +6,10 @@ public class easyArmor implements Armor {
     public int blockDamage() {
         return 35;
     }
+    @Override
+    public int getBlockDamage() {
+        return 35;
+    }
 
     @Override
     public String toString() {
