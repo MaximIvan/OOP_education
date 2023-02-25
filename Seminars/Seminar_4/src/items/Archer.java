@@ -4,14 +4,12 @@ import armor.Armor;
 import weapons.Bow;
 import armor.easyArmor;
 
-public class Archer extends Warrior<Bow> implements DistanceAttacker {
+public class Archer extends Warrior<Bow, easyArmor> implements DistanceAttacker {
 
     private int distance;
-    private Armor armor;
 
-    public Archer(String name, Bow weapon, Armor armor) {
-        super(name, weapon);
-        this.armor = armor;
+    public Archer(String name, Bow weapon, easyArmor armor) {
+        super(name, weapon, armor);
         distance = weapon.getDistance() + rnd.nextInt(10);
     }
 

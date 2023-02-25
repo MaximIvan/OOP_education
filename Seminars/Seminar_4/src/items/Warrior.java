@@ -1,20 +1,23 @@
 package items;
 
+import armor.Armor;
 import weapons.Weapon;
 import java.util.Random;
 
 
-public abstract class Warrior<T extends Weapon> {
+public abstract class Warrior<T extends Weapon, Z extends Armor> {
     private String name;
     protected T weapon;
     protected Random rnd = new Random();
     private int healthPoint;
+    protected Z armor;
 
 
-    public Warrior(String name, T weapon) {
+    public Warrior(String name, T weapon, Z armor) {
         this.name = name;
         this.weapon = weapon;
         healthPoint = 100;
+        this.armor = armor;
     }
 
     public int getHealthPoint() {
@@ -26,7 +29,8 @@ public abstract class Warrior<T extends Weapon> {
     }
 
     public int hitDamage(Warrior enemy) {
-        int damage = rnd.nextInt(weapon.damage());
+        int damage = rnd.nextInt(weapon.damage()) - armor.blockDamage();
+        if (damage <= 0) damage = 0;
         enemy.reduceHealthPoint(damage);
         return damage;
     }

@@ -5,13 +5,12 @@ import armor.heavyArmor;
 import weapons.Sword;
 
 
-public class SwordMan extends Warrior<Sword> {
+public class SwordMan extends Warrior<Sword, heavyArmor> {
 
     private Armor armor;
 
-    public SwordMan(String name, Sword weapon, Armor armor) {
-        super(name, weapon);
-        this.armor = armor;
+    public SwordMan(String name, Sword weapon, heavyArmor armor) {
+        super(name, weapon, armor);
     }
 
     public Armor getArmor() {
