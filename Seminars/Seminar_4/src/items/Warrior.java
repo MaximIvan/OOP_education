@@ -38,6 +38,9 @@ public abstract class Warrior<T extends Weapon, Z extends Armor> {
     public int getMaxDamage() {
         return weapon.damage();
     }
+    public int getBlockDamage() {
+        return armor.blockDamage();
+    }
 
     @Override
     public String toString() {

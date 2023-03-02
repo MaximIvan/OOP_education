@@ -7,7 +7,7 @@ import armor.easyArmor;
 public class Archer extends Warrior<Bow, easyArmor> implements DistanceAttacker {
 
     private int distance;
-    private int blockDamage;
+    private static int blockDamage;
 
     public Archer(String name, Bow weapon, easyArmor armor) {
         super(name, weapon, armor);
@@ -15,12 +15,13 @@ public class Archer extends Warrior<Bow, easyArmor> implements DistanceAttacker 
         blockDamage = armor.getBlockDamage();
     }
 
+
     public int getDistance() {
         return distance;
     }
 
     public int getBlockDamage() {
-        return blockDamage;
+        return this.blockDamage;
     }
 
     @Override

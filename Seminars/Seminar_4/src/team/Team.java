@@ -1,6 +1,6 @@
 package team;
 
-import armor.Armor;
+import items.Archer;
 import items.DistanceAttacker;
 import items.Warrior;
 
@@ -43,18 +43,17 @@ public class Team<T extends Warrior> {
     }
 
     public int getMinBlockDamage() {
-        int blockDamage = 0;
+        int minBlockDamage;
+        minBlockDamage = 35;
         for (T points : team) {
-            if (!(points instanceof Armor)) {
-                continue;
-            }
-            Armor temp = (Armor) points;
-            if (temp.getBlockDamage() < blockDamage) {
-                blockDamage = temp.getBlockDamage();
+            if (minBlockDamage > points.getBlockDamage()) {
+                minBlockDamage = points.getBlockDamage();
             }
         }
-        return blockDamage;
+        return minBlockDamage;
     }
+
+
 
     @Override
     public String toString() {
@@ -64,4 +63,5 @@ public class Team<T extends Warrior> {
         }
         return String.format("Team{ team= %s, maxDistance = %d, maxDamage = %d, minBlockDamage = %d \n%s}", name, getMaxDistance(), getTeamDamage(), getMinBlockDamage(), teamBuilder);
     }
+
 }

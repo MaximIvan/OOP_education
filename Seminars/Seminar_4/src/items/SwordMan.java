@@ -16,7 +16,7 @@ public class SwordMan extends Warrior<Sword, heavyArmor> {
     }
 
     public int getBlockDamage() {
-        return blockDamage;
+        return this.blockDamage;
     }
 
     @Override
